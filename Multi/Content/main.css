@@ -20,7 +20,6 @@ body {
 
 /* Custom page header */
 .header {
-  border-bottom: 1px solid #e5e5e5;
   margin-bottom: 10px;
 }
 /* Make the masthead heading the same height as the navigation */
@@ -34,7 +33,7 @@ body {
 /* Custom page footer */
 .footer {
   width:100%;
-  padding-top:10px;
+  padding-top:80px;
 }
 
 .container-narrow > hr {
@@ -43,7 +42,6 @@ body {
 
 /* Main marketing message and sign up button */
 .jumbotron {
-
 }
 .jumbotron .btn {
   font-size: 21px;
@@ -89,6 +87,11 @@ body {
 
 .light-text{
   color: snow;
+}
+
+.fa{
+    padding-left:2px;
+    padding-right:2px;
 }
 
 .row-navbar{
@@ -143,6 +146,14 @@ body {
 }
 
 .tabs-background:active, .tabs-background:hover, .tabs-background:focus{
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+p,div{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* SPINNING GLYPHICON */

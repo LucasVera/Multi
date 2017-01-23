@@ -6,6 +6,7 @@
     <meta name="description" content="Bienvenido a Multibelleza">
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="Content/bootstrap.min.css" />
+    <link rel="stylesheet" href="Content/font-awesome-4.7.0/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="Content/main.css" />
 </head>
 <body>
@@ -32,22 +33,22 @@
                     <ul class="nav navbar-nav">
                         <li>
                             <a ng-href="#/">
-                                <span class="fa fa-home fa-lg"></span>&nbsp;Home
+                                <span class="fa fa-home fa-lg"></span>&nbsp;Inicio
                             </a>
                         </li>
                         <li>
                             <a ng-href="#/about">
-                                <span class="fa fa-info fa-lg"></span>&nbsp;About
+                                <span class="fa fa-info fa-lg"></span>&nbsp;Nosotros
+                            </a>
+                        </li>
+                        <li>
+                            <a ng-href="#/contact">
+                                <span class="fa fa-envelope"></span>&nbsp;Contáctanos
                             </a>
                         </li>
                         <li>
                             <a ng-href="#/admin">
                                 <span class="fa fa-group "></span>&nbsp;Admin
-                            </a>
-                        </li>
-                        <li>
-                            <a ng-href="#/contact">
-                                <span class="fa fa-envelope"></span>&nbsp;Contact
                             </a>
                         </li>
                     </ul>
@@ -69,26 +70,27 @@
             <div class="row">
                 <div class="col-xs-5 col-xs-offset-1 col-sm-2 col-sm-offset-1">
                     <ul class="list-unstyled">
-                        <li><a ng-href="#/">Home</a></li>
-                        <li><a ng-href="#/about">About</a></li>
+                        <li><a ng-href="#/">Inicio</a></li>
+                        <li><a ng-href="#/about">Nosotros</a></li>
+                        <li><a ng-href="#/contact">Contáctanos</a></li>
                         <li><a ng-href="#/admin">Admin</a></li>
-                        <li><a ng-href="#/contact">Contact</a></li>
                     </ul>
                 </div>
-                <div class="col-xs-12 col-sm-7 col-sm-offset-2">
+                <div class="col-xs-5 col-xs-offset-1 col-sm-3 col-sm-offset-1">
                     <div class="nav navbar-nav" style="padding: 40px 10px;">
-                        <a class="btn btn-social-icon btn-google-plus" href="http://google.com/+"><i class="fa fa-google-plus fa-2x"></i></a>
-                        <a class="btn btn-social-icon btn-facebook" href="http://www.facebook.com"><i class="fa fa-facebook fa-2x"></i></a>
-                        <a class="btn btn-social-icon btn-linkedin" href="http://www.linkedin.com"><i class="fa fa-linkedin fa-2x"></i></a>
-                        <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i class="fa fa-twitter fa-2x"></i></a>
-                        <a class="btn btn-social-icon btn-youtube" href="http://youtube.com/"><i class="fa fa-youtube fa-2x"></i></a>
-                        <a class="btn btn-social-icon" href="mailto:"><i class="fa fa-envelope fa-2x"></i></a>
+                        <a class="btn" href="http://google.com/+"><span class="fa fa-google fa-2x"></span></a>
+                        <a class="btn" href="http://www.facebook.com/multibellezasa"><span class="fa fa-facebook fa-2x"></span></a>
+                        <a class="btn" href="http://youtube.com/"><span class="fa fa-youtube fa-2x"></span></a>
                     </div>
+                </div>
+                <div class="col-xs-12 col-sm-5">
+                    <h4><span class="fa fa-map-marker"></span>Calle 48 # 39-36, Medellín, COLOMBIA</h4>
+                    <h5><span class="fa fa-phone"></span>Tel. +574 2174485, +574 2166422</h5>
                 </div>
             </div>
             <div class="col-xs-12">
-                <p style="padding:10px;"></p>
-                <p align=center>© Copyright 2016</p>
+                <p style="padding:30px;"></p>
+                <p align=center>© Multibelleza S.A.S - 2017</p>
             </div>
         </div>
     </footer>
@@ -99,6 +101,7 @@
     <script src="scripts/angular.min.js"></script>
     <script src="scripts/angular-route.min.js"></script>
     <script src="scripts/angular-resource.min.js"></script>
+    <script src="scripts/bootstrap.min.js"></script>
     <!------------------------------------------------------------------------------------->
 
     <!-------------------------- CONTROLLERS AND SERVICES ---------------------------------->
@@ -114,39 +117,44 @@
 </body>
 
 <!--  MODALS  -->
-<div class="modal fade" id="loginModal" role="dialog" ng-controller="IndexCtrl">
+<div class="modal fade" id="loginModal" role="dialog" login-modal>
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h3 class="modal-title">Login</h3>
+                <div class="col-xs-5">
+                    <h3 class="modal-title">Login</h3>
+                </div>
             </div>
             <div class="modal-body">
+                <div class="container-fluid">
+                    <form class="form form-horizontal" id="loginForm" name="loginForm" ng-submit="$root.login($root.user, $root.pass)">
 
-                <form class="form form-horizontal" id="loginForm" name="loginForm" ng-submit="submitLogin()">
-                    <div class="form-group">
-                        <label for="EmailLogin">Email</label>
-                        <input type="email" class="form-control" id="EmailLogin" placeholder="Ingrese Email aqui" ng-model="loginInfo.email" required="true">
-                    </div>
-                    <div class="form-group">
-                        <label for="PasswordLogin">Contraseña</label>
-                        <input type="password" class="form-control" id="PasswordLogin" placeholder="Ingrese la contraseña aqui" ng-model="loginInfo.password" required="true">
-                    </div>
+                        <div class="form-group col-xs-12">
+                            <label for="txtUser">Usuario</label>
+                            <input type="text" class="form-control" id="txtUser" placeholder="Ingrese su usuario aquí" ng-model="$root.user" maxlength="50" required>
+                        </div>
+                        <div class="form-group col-xs-12">
+                            <label for="txtPassword">Contraseña</label>
+                            <input type="password" class="form-control" id="txtPassword" placeholder="Ingrese su contraseña aquí" ng-model="$root.pass" maxlength="50" required>
+                        </div>
 
-                    <div class="form-check">
-                        <label class="form-check-label">
-                            <input type="checkbox" class="form-check-input" ng-model="loginInfo.rememberMe">
-                            Recordarme
-                        </label>
-                    </div>
+                        <div class="col-xs-12" style="padding:3px;"></div>
 
-                    <button type="submit" class="btn btn-primary">Ingresar</button>
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">Crear cuenta</button>
-                    <div class="alert alert-danger" ng-if="showError">
-                        <strong>Error</strong> {{ErrorMsg}}
-                    </div>
+                        <button type="submit" class="btn btn-primary" ng-disabled="$root.isUpdating">Ingresar</button>
+                        <button type="reset" class="btn btn-default" ng-click="$root.showLoginMsg = false;">Limpiar</button>
+                        <div class="pull-right">
+                            <a ng-href="#/newAccount" class="btn btn-primary" style="margin-top:10px;">Crear cuenta</a>
+                        </div>
 
-                </form>
+                        <div class="col-xs-12" style="padding:2px;"></div>
+                        <div class="alert" ng-class="$root.loginMsgClass" ng-if="$root.showLoginMsg">
+                            {{$root.loginMsg}}
+                            <button type="button" class="close" ng-click="$root.showLoginMsg = false;"><span aria-hidden="true">&times;</span></button>
+                        </div>
+
+                    </form>
+                </div>
 
             </div>
             <div class="modal-footer">
