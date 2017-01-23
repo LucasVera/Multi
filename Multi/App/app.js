@@ -26,5 +26,12 @@ angular.module('multiApp', [
                 controller: 'AdminCtrl',
                 controllerAs: 'admin'
             })
-            
-    })
+            .when('/newAccount', {
+                templateUrl: 'views/newAccount.html',
+                controller: 'NewAccountCtrl',
+                controllerAs: 'newAccount'
+            })
+            .otherwise({
+                redirectTo: '/'
+            });
+    });

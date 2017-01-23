@@ -96,10 +96,12 @@
   <ItemGroup>
     <Content Include="App\aboutCtrl.js" />
     <Content Include="App\adminCtrl.js" />
+    <Content Include="App\adminService.js" />
     <Content Include="App\app.js" />
     <Content Include="App\contactCtrl.js" />
     <Content Include="App\customScripts.js" />
     <Content Include="App\homeCtrl.js" />
+    <Content Include="App\newAccount.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -184,6 +186,7 @@
     <Content Include="views\admin.html" />
     <Content Include="views\contact.html" />
     <Content Include="views\home.html" />
+    <Content Include="views\newAccount.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

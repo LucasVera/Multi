@@ -1,0 +1,24 @@
+﻿<div class="container">
+    <div class="row" ng-if="!$root.isLogged">
+        <div class="alert alert-warning">
+            <h3>Para ver esta sección debe estar autenticado. Por favor, <strong><a class="alert-link" href="" data-toggle="modal" data-target=#loginModal ng-click="$root.cleanLoginModal()">Inicie sesión.</a></strong>.</h3>
+        </div>
+    </div>
+    <div class="row" ng-if="$root.isLogged">
+
+        <ul class="nav nav-tabs">
+            <li role="presentation" ng-class="isTabSelected(1) ? 'active' : ''">
+                <a class="btn btn-primary tabs-background" href="" ng-click="selectTab(1)" data-toggle="tab">Usuarios</a>
+            </li>
+            <li role="presentation" ng-class="isTabSelected(2) ? 'active' : ''">
+                <a class="btn btn-primary tabs-background" href="" ng-click="selectTab(2)" data-toggle="tab">Promociones</a>
+            </li>
+        </ul>
+
+        <div class="tab-content">
+
+        </div>
+
+    </div>
+</div>
+
