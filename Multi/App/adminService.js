@@ -1,7 +1,6 @@
 ﻿'use strict';
 
 angular.module('panelApp')
-    //.constant('baseURL', 'http://localhost:50865/api/')
     .service('adminService', ['$resource', '$window', '$rootScope', function ($resource, $window, $rootScope) {
 
         var userInfo = {};
@@ -13,9 +12,8 @@ angular.module('panelApp')
         }
 
         this.authResource = function () {
-            //return $resource(baseURL + '/api/auth');
             return $resource(baseUrlApiFull + 'auth');
-        };
+        }
 
         // ----------- LOCAL STORAGE ----------------------------------------------------------------------------------------------
         // ideally, this goes on a separate service/factory. Implementing here for now...

@@ -1,10 +1,16 @@
 ﻿<!doctype html>
 <html ng-app="multiApp">
 <head>
+    <!-- base attribute specifies the default URL for the page. in debug set = '/'.
+        para tablero de control, en debug era: '/', pero al sacar el deployment,
+        se le puso '/tablerodecontrol/' y '/tablerodecontrolQA' -->
+    <base href="/" />
+
     <meta charset="utf-8">
-    <title>Multibelleza SAS</title>
+    <title>Multibelleza :: Productos e implementos para peluquería</title>
     <meta name="description" content="Bienvenido a Multibelleza">
     <meta name="viewport" content="width=device-width">
+
     <link rel="stylesheet" href="Content/bootstrap.min.css" />
     <link rel="stylesheet" href="Content/font-awesome-4.7.0/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="Content/main.css" />
